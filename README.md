@@ -18,9 +18,10 @@
 
 * lancer Insomnia
 
-* il y a 5 requêtes différentes :
+* il y a 6 requêtes différentes :
     * get sur la route '/' pour avoir tous les users
     * get sur la route '/:id_user' pour avoir un user spécifique
     * post sur la route '/' pour créer un user
     * put sur la route '/:id_user' pour mettre à jour un user
     * delete sur la route '/:id_user' pour supprimer un user
+    * post sur la route '/:id_user' pour uploader une image à un user spécifique
