@@ -9,6 +9,8 @@ app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.use('/uploads', express.static('uploads'))
+
 const userRoutes = require('./App/routes/userRoute')
 app.use('/users', userRoutes())
 
@@ -21,5 +23,5 @@ app.listen(port, () => {
 mongoose.connect(db.url, {
         useNewUrlParser: true
     })
-    .then(() => console.log('You are connected to mongodb'))
+    .then(() => console.log('You are connected to mongodb\nThe database name is Users'))
     .catch(err => console.log(err))

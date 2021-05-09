@@ -1,5 +1,6 @@
 const { response, request } = require('express')
 const users = require('../models/userModel')
+const multer = require('multer')
 
 exports.findAllUsers = (request, response) => {
     users.find()
@@ -58,4 +59,34 @@ exports.delete = (request, response) => {
             response.send('deletion done')
         })
         .catch(err => response.send('an error has occured ' + err))
+}
+
+const imageStorage = multer.diskStorage({
+    destination: './uploads',
+    filename: (request, file, callback) => {
+        callback(null, file.originalname)
+    }
+})
+
+exports.uploadImage = multer({ 
+    storage: imageStorage,
+    fileFilter(request, file, callback) {
+        if (!file.originalname.match(/\.(png|jpg)$/)) { 
+            // upload only png and jpg format
+            return callback(new Error('Please upload an image as avatar'))
+          }
+        callback(undefined, true)
+    } 
+})
+
+exports.uploadAvatar = (request, response) => {
+    const id = request.params.id
+    users.findByIdAndUpdate(id, { "avatar": request.file.filename }, { new: true })
+    .then(data => {
+        if (!data) return response.send("can't update, no user for id : " + id)
+        response.send('update done\n' + request.file)
+    })
+    .catch(err => response.send('an error has occured ' + err))
+}, (error, request, response, next) => {
+    response.status(400).send({ error: error.message })
 }
