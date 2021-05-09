@@ -6,15 +6,15 @@
 
 ## Quelques Informations
 
-* lancer la commande : ***git clone https://github.com/CorentinLrcn/CRUD_project_NodeJS.git*** pour cloner le repository
+* lancer la commande : ``git clone https://github.com/CorentinLrcn/CRUD_project_NodeJS.git`` pour cloner le repository
 
-* ***cd CRUD_project_NodeJS*** pour entrer dans le projet
+* ``cd CRUD_project_NodeJS`` pour entrer dans le projet
 
-* ***npm i*** pour installer les différents modules
+* ``npm i`` pour installer les différents modules
 
-* ***node server*** pour lancer le server
+* ``node server`` pour lancer le server
 
-* (vous pouvez lancer ***mongod*** si vous voulez avoir un aperçu direct sur la bdd)
+* (vous pouvez lancer ``mongod`` si vous voulez avoir un aperçu direct sur la bdd)
 
 * lancer Insomnia
 
