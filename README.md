@@ -2,7 +2,7 @@
 
 ## Type de BDD
 
-**NoSQL (mongodb)**
+* **NoSQL (mongodb)**
 
 ## Quelques Informations
 
